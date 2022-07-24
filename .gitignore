@@ -1,0 +1,8 @@
+.ipynb_checkpoints/
+.ideas/
+**/__pycache__/
+OldResults/
+RelatedPapersComparison/DAM_measured_with_BGCN/DAM_models/
+Results28_09_20/
+TrainedModels/*
+.idea/

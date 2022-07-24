@@ -1,0 +1,9 @@
+tqdm
+numpy
+matplotlib
+transformers==2.1.1
+pandas
+sklearn
+pytorch>=1.4
+implicit==0.4.4
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
