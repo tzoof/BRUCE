@@ -1,6 +1,6 @@
 # BRUCE - Bundle Recommendation Using Contextualized item Embeddings
 
-This is our official implementation for the paper: BRUCE - Bundle Recommendation Using Contextualized item Embeddings<br/>
+This is the official implementation for the paper: BRUCE - Bundle Recommendation Using Contextualized item Embeddings<br/>
 
 # Run the Code 
 ## Best Configurations
@@ -8,11 +8,11 @@ The BRUCE architecture is modular and combines several independent
 components which can be configured to best match the
 data and task <br/>
 
-Here are the best configurations for running BRUCE on each dataset.
+Here are the best configurations for running BRUCE on each dataset<br/><br/>
 Steam:<br/>
 1. Train BPR model: 
 ```
-MFbaseline/trainMF.py --train_only --size=12 --dataset_string=Steam --avg_items<br>
+MFbaseline/trainMF.py --train_only --size=12 --dataset_string=Steam --avg_items
 ```
 2. Train model usin pretrained BPR embeddings:
 ```
@@ -21,11 +21,11 @@ Main.py --dataset_string=Steam --description=bestConfig --op_after_transformer=a
 Youshu:<br/>
 1. Train BPR model: 
 ```
-MFbaseline/trainMF.py --train_only --size=24 --dataset_string=Youshu --avg_items --dont_multi_task --op_after_transformer=bert
+MFbaseline/trainMF.py --train_only --size=24 --dataset_string=Youshu --avg_items
 ```
 2. Train model usin pretrained BPR embeddings:
 ```
-Main.py --dataset_string=Youshu --description=BestConfig --embed_shape=24 --weight_decay=0.0075 --num_epochs=7000 --start_val_from=4000 --useUserBertV2 --pretrained_bpr_path=<BprModelPath.pkl> --use_pretrained
+Main.py --dataset_string=Youshu --description=BestConfig --embed_shape=24 --weight_decay=0.0075 --useUserBertV2 --num_epochs=7000 --start_val_from=4000 --pretrained_bpr_path=<BprModelPath.pkl> --use_pretrained
 ```
 NetEase:<br/>
 1. Train BPR model: 
@@ -43,8 +43,7 @@ BRUCE code is modular and can be used and changed according to the need and task
 The default configuration is to randomly initialize item embeddings. <br>
 In order to use pretrained embeddings you need to do the following steps. <br>
 a. Train a BPR model - 
-MFbaseline/trainMF.py --train_only --size=<12-48> --dataset_string=<Youshu/NetE
-/Steam> --avg_items<br>
+MFbaseline/trainMF.py --train_only --size=<12-48> --dataset_string=<Youshu/NetEase/Steam> --avg_items<br>
 The saved BPR model path should look like TrainedModels/bpr_user_avg_items_<datetime>.pkl")
 b. Train with pretrained BPR embeddings: by adding the parameters --use_pretrained --pretrained_bpr_path=<modelPath.pkl>
 
@@ -67,6 +66,7 @@ e. Bundle embedding BERT-like aggregation --bundleEmbeddings --op_after_transfor
 
 
 #### 4. Multi-task Learning
+Learning to predict user bundle preferences together with user item preferences.
 You can avoid the multi-task learning process by using the --dont_multi_task flag.
 
 
