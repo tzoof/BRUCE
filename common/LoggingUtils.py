@@ -18,7 +18,7 @@ def create_log_dir(args):
     shutil.copytree("common", os.path.join(dir_name, "common"))
     shutil.copytree("UserBert", os.path.join(dir_name, "UserBert"))
     shutil.copytree("PostUL", os.path.join(dir_name, "PostUL"))
-    shutil.copytree("PostUL", os.path.join(dir_name, "Pretrain"))
+    shutil.copytree("Pretrain", os.path.join(dir_name, "Pretrain"))
     shutil.copytree("PreUL", os.path.join(dir_name, "PreUL"))
     shutil.copy("Main.py", os.path.join(dir_name, "Main.py"))
     return dir_name, start_time_string
